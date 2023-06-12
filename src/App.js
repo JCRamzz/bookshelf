@@ -37,6 +37,7 @@ function App() {
 
   return (
     <div className="app">
+      <h1>My Bookshelf</h1>
       <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
       <BookCreate onCreate={createBook} />
     </div>
