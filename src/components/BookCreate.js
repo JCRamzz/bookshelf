@@ -19,7 +19,7 @@ function BookCreate({ onCreate }) {
       <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input className="input" value={title} onChange={handleChange} />
-        <button className="button">Submit</button>
+        <button className="button">Create!</button>
       </form>
     </div>
   );
