@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import BookshelfContext from "../context/bookshelf";
 import BookShow from "./BookShow";
+import useBookshelfContext from "../hooks/use-bookshelf-context";
 
 function BookList() {
-  const { books } = useContext(BookshelfContext);
+  const { books } = useBookshelfContext();
 
   // Check if books is undefined or null
   if (!books) {
