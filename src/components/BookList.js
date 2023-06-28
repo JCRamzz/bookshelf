@@ -2,22 +2,19 @@ import { useContext } from "react";
 import BookshelfContext from "../context/bookshelf";
 import BookShow from "./BookShow";
 
-function BookList({ books, onDelete, onEdit }) {
-  const { count, incrementCount } = useContext(BookshelfContext);
+function BookList() {
+  const { books } = useContext(BookshelfContext);
+
+  // Check if books is undefined or null
+  if (!books) {
+    return <div>Loading...</div>;
+  }
 
   const renderedBooks = books.map((book) => {
-    return (
-      <BookShow onDelete={onDelete} key={book.id} book={book} onEdit={onEdit} />
-    );
+    return <BookShow key={book.id} book={book} />;
   });
 
-  return (
-    <div className="book-list">
-      {count}
-      <button onClick={incrementCount}>Click</button>
-      {renderedBooks}
-    </div>
-  );
+  return <div className="book-list">{renderedBooks}</div>;
 }
 
 export default BookList;
