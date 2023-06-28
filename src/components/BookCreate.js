@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
-import BookshelfContext from "../context/bookshelf";
+import { useState } from "react";
+import useBookshelfContext from "../hooks/use-bookshelf-context";
 
 function BookCreate() {
   const [title, setTitle] = useState("");
-  const { createBook } = useContext(BookshelfContext);
+  const { createBook } = useBookshelfContext();
 
   const handleChange = (event) => {
     setTitle(event.target.value);
